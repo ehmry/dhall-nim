@@ -10,4 +10,4 @@ srcDir        = "src"
 
 # Dependencies
 
-requires "nim >= 1.2.0", "bigints"
+requires "nim >= 1.2.0", "bigints", "cbor"
