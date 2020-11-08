@@ -6,7 +6,7 @@ description   = "Dhall language evaluator"
 license       = "GPL-3.0"
 srcDir        = "src"
 installExt    = @["nim"]
-
+bin           = @["xml_to_dhall"]
 
 
 # Dependencies
