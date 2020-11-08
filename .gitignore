@@ -1,0 +1,4 @@
+.history
+.reuse
+tests/test_standard
+xml_to_dhall

@@ -3,7 +3,7 @@
 version       = "0.1.0"
 author        = "Emery Hemingway"
 description   = "Dhall language evaluator"
-license       = "GPL-3.0"
+license       = "ISC"
 srcDir        = "src"
 installExt    = @["nim"]
 bin           = @["xml_to_dhall"]
