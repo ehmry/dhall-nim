@@ -6,7 +6,7 @@ description   = "Dhall language evaluator"
 license       = "ISC"
 srcDir        = "src"
 installExt    = @["nim"]
-bin           = @["xml_to_dhall"]
+bin           = @["cbor_to_dhall", "xml_to_dhall"]
 
 
 # Dependencies
