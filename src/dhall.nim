@@ -18,7 +18,8 @@ proc newTerm(path: string): Term =
                 importElements: path.normalizedPath.split('/'))
   if path.isAbsolute:
     result.importScheme = iAbs
-    result.importElements = result.importElements[1 .. result.importElements.low]
+    result.importElements = result.importElements[
+        1 .. result.importElements.high]
 
 proc importDhall*(path: string): Future[Term] =
   path.newTerm.resolve
