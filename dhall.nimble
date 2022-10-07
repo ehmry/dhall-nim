@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version = "20221007"
 author        = "Emery Hemingway"
 description   = "Dhall language evaluator"
 license       = "ISC"
