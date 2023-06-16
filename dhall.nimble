@@ -3,7 +3,7 @@
 version = "20221007"
 author        = "Emery Hemingway"
 description   = "Dhall language evaluator"
-license       = "ISC"
+license       = "Unlicense"
 srcDir        = "src"
 installExt    = @["nim"]
 bin           = @["dhall/private/cbor_to_dhall", "dhall/private/xml_to_dhall"]
