@@ -1,0 +1,5 @@
+NIM_FLAGS += --path:$(TUP_CWD)/../cbor/src
+NIM_FLAGS += --path:$(TUP_CWD)/../nimble/nimsha2
+NIM_FLAGS += --path:$(TUP_CWD)/../nimble/npeg/src
+NIM_GROUPS += $(TUP_CWD)/../nimble/<nimsha2>
+NIM_GROUPS += $(TUP_CWD)/../nimble/<npeg>
