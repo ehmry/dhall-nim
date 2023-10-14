@@ -1,13 +1,13 @@
 # SPDX-License-Identifier: MIT
 
 import
-  ./quotation, ./terms
-
-import
-  cbor / private / bigints
-
-import
   std / [algorithm, asyncfutures, math, options, strutils, tables]
+
+import
+  bigints
+
+import
+  ./quotation, ./terms
 
 func quoteLabel(s: string): string =
   case s
